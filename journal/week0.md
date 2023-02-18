@@ -84,14 +84,19 @@ which will return a TopicARN !
 We'll create a subscription supply the TopicARN and our Email
 
 ```bash
+aws sns subscribe \
+    --topic-arn="arn:aws:sns:eu-west-1:424818714147:billing-alarm" \
+    --protocol=email \
+    --notification-endpoint=mehmettuzcu22@gmail.com
 
 ```
 
 Check your email and confirm the subscription
+
 ## Create Alarm
 
 * aws cloudwatch put-metric-alarm
-* Create an Alarm via AWS CLI
+* [Create an Alarm via AWS CLI](https://aws.amazon.com/premiumsupport/knowledge-center/cloudwatch-estimatedcharges-alarm/)
 * We need to update the configuration json script with the TopicARN we generated earlier
 * We are just a json file because --metrics isis required for expressions and so its easier to us a JSON file.
 ```bash
@@ -115,5 +120,12 @@ aws sts get-caller-identity —-query Account --output text
 
 
 ```bash
+export AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+```
 
+```bash
+aws budgets create-budget \
+    --account-id $AWS_ACCOUNT_ID \
+    --budget file://aws/json/budget.json \
+    --notifications-with-subscribers file://aws/json/notifications-with-subscribers.json
 ```
