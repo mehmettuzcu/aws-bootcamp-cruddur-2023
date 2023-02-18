@@ -27,3 +27,41 @@ tasks:
 ```
 We''l also run these commands indivually to perform the install manually
 
+## Create a new User and Generate AWS Credentials i
+* Go to (IAM Users Console] create aim user
+* Enable console access for the user ;
+* Create anew Adwin Group and apply AdwinistratorAccess }
+* Create the user and go find and click into the user i
+* Clickon Security Credentials and Create Access Key }
+* Choose AWS CLI Access }
+* Download the CSV with the credentials
+
+### Set Env Vars
+We willset these credentials for the current bash terminal
+
+```bash
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export AWS_DEFAULT_REGION=""
+```
+
+We'll tell Gitpod to remember these credentials if we relaunch our workspaces
+
+```bash
+gp env AWS_ACCESS_KEY_ID=""
+gp env AWS_SECRET_ACCESS_KEY=""
+gp env AWS_DEFAULT_REGION=""
+```
+
+### Check that the AWS CLI is working and you are the expected user i
+
+```bash
+aws --cli-auto-prompt
+aws sts get-caller-identity
+```
+
+You should see something like this:
+```bash
+
+```
+
