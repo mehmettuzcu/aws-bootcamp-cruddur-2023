@@ -6,6 +6,15 @@ Good Article for Debugging Connection Refused
 https://pythonspeed.com/articles/docker-connection-refused/
 
 
+# Homework 
+* Spending Considerations for Container and AWS Securtiy
+* Creating Containerize Application fro Backend and Frontend(Dockerfiles, Docker Compose)
+* Adding Document the Notification Endpoint for the OpenAI Document-Write a Flask Backend Endpoint for Notifications
+* Sepending time how to build postgresql locally
+* Appliying security best practices
+* Finished all videos for week-1
+* applied when i was watching video what we did on the video with hands-on experience.
+
 ## VSCode Docker Extension
 
 Docker for VSCode makes it easy to work with Docker
